@@ -2,23 +2,27 @@ package idpay
 
 import (
 	"strconv"
-	"strings"
 )
 
-type Number int
+type Number int64
 
-func (jsonInt *Number) MarshalJSON() ([]byte, error) {
-	return []byte(strconv.Itoa(int(*jsonInt))), nil
+func (c *Number) MarshalJSON() ([]byte, error) {
+	return []byte(strconv.Quote(strconv.FormatInt(int64(*c), 10))), nil
 }
 
-func (jsonInt *Number) UnmarshalJSON(b []byte) error {
-	intStr := strings.Replace(string(b), "\"", "", 2)
-
-	number, err := strconv.Atoi(intStr)
+func (c *Number) UnmarshalJSON(b []byte) error {
+	s, err := strconv.Unquote(string(b))
+	if err != nil {
+		s = string(b)
+	}
+	i, err := strconv.ParseInt(s, 10, 64)
 	if err != nil {
 		return err
 	}
-
-	*jsonInt = Number(number)
+	*c = Number(i)
 	return nil
+}
+
+func (c Number) Int64() int64 {
+	return int64(c)
 }
