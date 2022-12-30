@@ -1,11 +1,11 @@
 # Go [IDPay](https://idpay.ir/) API Wrapper
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/MR-AliHaashemi/go-idpay)](https://goreportcard.com/report/github.com/MR-AliHaashemi/go-idpay) [![Go Reference](https://pkg.go.dev/badge/github.com/MR-AliHaashemi/go-idpay.svg)](https://pkg.go.dev/github.com/MR-AliHaashemi/go-idpay)
+[![Go Report Card](https://goreportcard.com/badge/github.com/haashemi/go-idpay)](https://goreportcard.com/report/github.com/haashemi/go-idpay) [![Go Reference](https://pkg.go.dev/badge/github.com/haashemi/go-idpay.svg)](https://pkg.go.dev/github.com/haashemi/go-idpay)
 
 
 ### Installation
 ```
-go get github.com/MR-AliHaashemi/go-idpay
+go get github.com/haashemi/go-idpay
 ```
 
 ------
@@ -17,7 +17,7 @@ package main
 
 import (
     "fmt"
-    "github.com/MR-AliHaashemi/go-idpay"
+    "github.com/haashemi/go-idpay"
 )
 
 func main() {

@@ -1,3 +1,3 @@
-module github.com/MR-AliHaashemi/go-idpay
+module github.com/haashemi/go-idpay
 
 go 1.13
