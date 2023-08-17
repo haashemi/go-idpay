@@ -73,7 +73,7 @@ func (i IDPay) InquiryTransaction(id, orderID string) (*InquiryTransaction, erro
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return nil, getError(req.Body)
+		return nil, getError(resp.Body)
 	}
 
 	data := &InquiryTransaction{}

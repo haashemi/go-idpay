@@ -78,7 +78,7 @@ func (i IDPay) CreateTransaction(orderID, callbackURL string, amount int, opts *
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusCreated {
-		return nil, getError(req.Body)
+		return nil, getError(resp.Body)
 	}
 
 	data := &NewTransaction{}

@@ -57,7 +57,7 @@ func (i IDPay) VerifyTransaction(id, orderID string) (*VerifyTransaction, error)
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		return nil, getError(req.Body)
+		return nil, getError(resp.Body)
 	}
 
 	data := &VerifyTransaction{}
