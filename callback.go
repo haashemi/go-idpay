@@ -12,8 +12,8 @@ type PostCallback struct {
 }
 
 type GetCallback struct {
-	Status  Number `json:"status"`   // Status is Transaction Status
-	TrackID Number `json:"track_id"` // TrackIS is IDPay's track id
-	ID      string `json:"id"`       // ID is Transaction ID which generated on creating the transaction
-	OrderID string `json:"order_id"` // OrderID is the orderID which sent on creating the transaction
+	Status  Number `json:"status" form:"status"`     // Status is Transaction Status
+	TrackID Number `json:"track_id" form:"track_id"` // TrackIS is IDPay's track id
+	ID      string `json:"id" form:"id"`             // ID is Transaction ID which generated on creating the transaction
+	OrderID string `json:"order_id" form:"order_id"` // OrderID is the orderID which sent on creating the transaction
 }
